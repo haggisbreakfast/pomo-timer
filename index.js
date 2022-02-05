@@ -17,8 +17,19 @@ new Vue({
 				this.handlePause();
 				alert("yas time's up go off kween werk")
 			}
+		},
+		handlePause: function() {
+			clearInterval(this.timer);
+			this.timer = null;
+		},
+		handleReset: function(){
+			this.remainingTime = 60 * 25;
+			clearInterval(this.timer);
+			this.timer = null;
+
 		}
-		
 	}, 
-	computed: {}
-})
+	computed: {
+		
+	}
+});
