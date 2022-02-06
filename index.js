@@ -30,6 +30,15 @@ new Vue({
 		}
 	}, 
 	computed: {
-		
+		minutes: function() {
+			const minutes = Math.floor(remainingTime / 60);
+			if (minutes > 10) {
+				return minutes
+			}  else {
+				return `0${minutes}`;
+			}
+		}, 
+		seconds: function() {
+		}
 	}
 });
