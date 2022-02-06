@@ -33,12 +33,19 @@ new Vue({
 		minutes: function() {
 			const minutes = Math.floor(remainingTime / 60);
 			if (minutes > 10) {
-				return minutes
+				return minutes;
 			}  else {
 				return `0${minutes}`;
 			}
 		}, 
 		seconds: function() {
+			const seconds = this.remainingTime - (minutes * 60);
+			if (seconds < 10) {
+				return `0${seconds}`;
+			} else {
+				return seconds;
+			}
+		
 		}
 	}
 });
